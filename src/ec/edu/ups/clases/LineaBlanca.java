@@ -6,9 +6,72 @@
 package ec.edu.ups.clases;
 
 /**
- *
- * @author patrick
+  * LineaBlanca es la clase "padre"  
+ * @since 2019
+ * @see http://ups.edu.ec
+ * @author Patricio Merchán
+ 
  */
-public class LineaBlanca {
+public class LineaBlanca extends Electrodomestico{
+    
+    private String lineaPequenia;
+    private String limpieza;
+    private String clima;
+    private String cosina;
+
+  
+    public LineaBlanca(String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String color, double Precio) {
+        super(codigo, marca, color, Precio);
+        this.lineaPequenia = lineaPequenia;
+        this.limpieza = limpieza;
+        this.clima = clima;
+        this.cosina = cosina;
+    }
+    
+    
+    
+    
+  
+
+    
+    
+    public void setLineaPequenia(String lineaPequenia) {
+        this.lineaPequenia = lineaPequenia;
+    }
+
+    public void setLimpieza(String limpieza) {
+        this.limpieza = limpieza;
+    }
+
+    public void setClima(String clima) {
+        this.clima = clima;
+    }
+
+    public void setCosina(String cosina) {
+        this.cosina = cosina;
+    }
+
+    public String getLineaPequenia() {
+        return lineaPequenia;
+    }
+
+    public String getLimpieza() {
+        return limpieza;
+    }
+
+    public String getClima() {
+        return clima;
+    }
+
+    public String getCosina() {
+        return cosina;
+    }
+
+    @Override
+    public String toString() {
+        return "LineaBlanca{" + "lineaPequenia=" + lineaPequenia + ", limpieza=" + limpieza + ", clima=" + clima + ", cosina=" + cosina + '}';
+    }
+    
+    
     
 }
