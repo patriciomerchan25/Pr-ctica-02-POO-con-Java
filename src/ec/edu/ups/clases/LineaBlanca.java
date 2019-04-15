@@ -20,8 +20,13 @@ public class LineaBlanca extends Electrodomestico{
     private String cosina;
 
   
-    public LineaBlanca(String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String color, double Precio) {
-        super(codigo, marca, color, Precio);
+    
+     public LineaBlanca(int codigo, String marca, String nombre, double Precio) {
+        super(codigo, marca, nombre, Precio);
+    }
+    
+    public LineaBlanca(String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String nombre, double Precio) {
+        super(codigo, marca, nombre, Precio);
         this.lineaPequenia = lineaPequenia;
         this.limpieza = limpieza;
         this.clima = clima;
@@ -69,7 +74,7 @@ public class LineaBlanca extends Electrodomestico{
 
     @Override
     public String toString() {
-        return "LineaBlanca{" + "lineaPequenia=" + lineaPequenia + ", limpieza=" + limpieza + ", clima=" + clima + ", cosina=" + cosina + '}';
+        return super.toString()+"\n LineaBlanca{" + "lineaPequenia=" + lineaPequenia + ", limpieza=" + limpieza + ", clima=" + clima + ", cosina=" + cosina + '}';
     }
     
     

@@ -5,13 +5,15 @@
  */
 package ec.edu.ups.clases;
 
+import ec.edu.ups.interfaces.Manual;
+
 /**
  * Electrodomestico es la clase "hija"  
  * @since 2019
  * @see http://ups.edu.ec
  * @author Patricio Merchá
  */
-public class ComputadoraPersonal extends LineaMarron {
+public class ComputadoraPersonal extends LineaMarron implements Manual{
     
     private String cpu;
     private String monitor;
@@ -26,6 +28,15 @@ public class ComputadoraPersonal extends LineaMarron {
     public ComputadoraPersonal(String lineaGrande, String audio, String imagen, String sonido, int codigo, String marca, String color, double Precio) {
         super(lineaGrande, audio, imagen, sonido, codigo, marca, color, Precio);
     }
+
+    public ComputadoraPersonal(String cpu, String monitor, String parlante, String mouse, String lineaGrande, String audio, String imagen, String sonido, int codigo, String marca, String nombre, double Precio) {
+        super(lineaGrande, audio, imagen, sonido, codigo, marca, nombre, Precio);
+        this.cpu = cpu;
+        this.monitor = monitor;
+        this.parlante = parlante;
+        this.mouse = mouse;
+    }
+    
     
     
 
@@ -63,10 +74,18 @@ public class ComputadoraPersonal extends LineaMarron {
 
     @Override
     public String toString() {
-        return "ComputadoraPersonal{" + "cpu=" + cpu + ", monitor=" + monitor + ", parlante=" + parlante + ", mouse=" + mouse + '}';
+        return super.toString()+"\n ComputadoraPersonal{" + "cpu=" + cpu + ", monitor=" + monitor + ", parlante=" + parlante + ", mouse=" + mouse + '}';
     }
     
-    
+    @Override
+    public String instalar() {
+        return "La marca " + super.getMarca() + "  debe instarlar en un escritorio para mayor comodidad";
+    }
+
+    @Override
+    public String configurar() {
+        return "La  " + super.getNombre() + " puede configurar desde la bios o desde el sistema operativo";
+    }
     
     
 }

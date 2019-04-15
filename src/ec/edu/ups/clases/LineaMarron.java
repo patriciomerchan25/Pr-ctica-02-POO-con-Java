@@ -5,13 +5,15 @@
  */
 package ec.edu.ups.clases;
 
+import ec.edu.ups.interfaces.Manual;
+
 /**
  * LineaMarron es la clase "padre"  
  * @since 2019
  * @see http://ups.edu.ec
  * @author Patricio Merchán
  */
-public class LineaMarron extends Electrodomestico {
+public class LineaMarron extends Electrodomestico  {
     
     // Atributos de la clase
     private String lineaGrande;
@@ -21,12 +23,12 @@ public class LineaMarron extends Electrodomestico {
     
       
      // generamos el contructor que contien atributos de la clase Electrodomestico 
-    public LineaMarron(int codigo, String marca, String color, double Precio) {
-        super(codigo, marca, color, Precio);
+    public LineaMarron(int codigo, String marca, String nombre, double Precio) {
+        super(codigo, marca, nombre, Precio);
     }
 
-    public LineaMarron(String lineaGrande, String audio, String imagen, String sonido, int codigo, String marca, String color, double Precio) {
-        super(codigo, marca, color, Precio);
+    public LineaMarron(String lineaGrande, String audio, String imagen, String sonido, int codigo, String marca, String nombre, double Precio) {
+        super(codigo, marca, nombre, Precio);
         this.lineaGrande = lineaGrande;
         this.audio = audio;
         this.imagen = imagen;
@@ -69,9 +71,9 @@ public class LineaMarron extends Electrodomestico {
 
     @Override
     public String toString() {
-        return "LineaMarron{" + "lineaGrande=" + lineaGrande + ", audio=" + audio + ", imagen=" + imagen + ", sonido=" + sonido + '}';
+        return super.toString() +"\n LineaMarron{" + "lineaGrande=" + lineaGrande + ", audio=" + audio + ", imagen=" + imagen + ", sonido=" + sonido + '}';
     }
-    
+
     
     
     

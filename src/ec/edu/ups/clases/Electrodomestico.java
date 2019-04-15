@@ -18,14 +18,14 @@ public class Electrodomestico {
     
     private int codigo;
     private String marca;
-    private String color;
+    private String nombre;
     private double Precio;
 
     // generamos el constructor
-    public Electrodomestico(int codigo, String marca, String color, double Precio) {
+    public Electrodomestico(int codigo, String marca, String nombre, double Precio) {
         this.codigo = codigo;
         this.marca = marca;
-        this.color = color;
+        this.nombre = nombre;
         this.Precio = Precio;
     }
     
@@ -39,8 +39,8 @@ public class Electrodomestico {
         this.marca = marca;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setPrecio(double Precio) {
@@ -56,8 +56,8 @@ public class Electrodomestico {
         return marca;
     }
 
-    public String getColor() {
-        return color;
+    public String getNombre() {
+        return nombre;
     }
 
     public double getPrecio() {
@@ -67,7 +67,7 @@ public class Electrodomestico {
     // generamos el to String
     @Override
     public String toString() {
-        return "Electrodomestico{" + "codigo=" + codigo + ", marca=" + marca + ", color=" + color + ", Precio=" + Precio + '}';
+        return "Electrodomestico{" + "codigo=" + codigo + ", marca=" + marca + ", nombre=" + nombre + ", Precio=" + Precio + '}';
     }
     
     

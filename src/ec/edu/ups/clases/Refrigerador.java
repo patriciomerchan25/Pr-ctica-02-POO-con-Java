@@ -5,13 +5,17 @@
  */
 package ec.edu.ups.clases;
 
+import ec.edu.ups.interfaces.Manual;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Electrodomestico es la clase "hija"  
  * @since 2019
  * @see http://ups.edu.ec
  * @author Patricio Merchá
  */
-public class Refrigerador extends LineaBlanca {
+public class Refrigerador extends LineaBlanca implements Manual{
     
     
     private String congelar;
@@ -23,6 +27,16 @@ public class Refrigerador extends LineaBlanca {
     public Refrigerador(String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String color, double Precio) {
         super(lineaPequenia, limpieza, clima, cosina, codigo, marca, color, Precio);
     }
+
+    public Refrigerador(String congelar, String numeroPuertas, String led, String temperatura, String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String nombre, double Precio) {
+        super(lineaPequenia, limpieza, clima, cosina, codigo, marca, nombre, Precio);
+        this.congelar = congelar;
+        this.numeroPuertas = numeroPuertas;
+        this.led = led;
+        this.temperatura = temperatura;
+    }
+    
+    
 
     
     public void setCongelar(String congelar) {
@@ -59,14 +73,21 @@ public class Refrigerador extends LineaBlanca {
 
     @Override
     public String toString() {
-        return "Refrigerador{" + "congelar=" + congelar + ", numeroPuertas=" + numeroPuertas + ", led=" + led + ", temperatura=" + temperatura + '}';
+        return super.toString()+"\n Refrigerador{" + "congelar=" + congelar + ", numeroPuertas=" + numeroPuertas + ", led=" + led + ", temperatura=" + temperatura + '}';
     }
-    
-    
-    
-    
+
+  @Override
+    public String instalar() {
+        return "La marca " + super.getMarca() + " debe instarlar en el area de cosina especialmente.";
+    }
+
+    @Override
+    public String configurar() {
+         return "El  " + super.getNombre() + " puede configurar la temperatura del cogelador de manera manual.";
+    }
+   
  
-    
+   
     
     
 }

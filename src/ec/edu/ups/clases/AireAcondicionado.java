@@ -5,27 +5,33 @@
  */
 package ec.edu.ups.clases;
 
+import ec.edu.ups.interfaces.Manual;
+
 /**
  * Electrodomestico es la clase "hija"  
  * @since 2019
  * @see http://ups.edu.ec
  * @author Patricio Merchá
  */
-public class AireAcondicionado extends LineaBlanca{
+public class AireAcondicionado extends LineaBlanca implements Manual{
     
        private String condensador;
     private String compresor;
     private String evaporador;
     private String termoestato;
 
-    public AireAcondicionado(String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String color, double Precio) {
-        super(lineaPequenia, limpieza, clima, cosina, codigo, marca, color, Precio);
+    public AireAcondicionado(String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String nombre, double Precio) {
+        super(lineaPequenia, limpieza, clima, cosina, codigo, marca, nombre, Precio);
     }
 
+    public AireAcondicionado(String condensador, String compresor, String evaporador, String termoestato, String lineaPequenia, String limpieza, String clima, String cosina, int codigo, String marca, String nombre, double Precio) {
+        super(lineaPequenia, limpieza, clima, cosina, codigo, marca, nombre, Precio);
+        this.condensador = condensador;
+        this.compresor = compresor;
+        this.evaporador = evaporador;
+        this.termoestato = termoestato;
+    }
     
-
-   
-
     
     
     
@@ -63,7 +69,18 @@ public class AireAcondicionado extends LineaBlanca{
 
     @Override
     public String toString() {
-        return "Refrigerador{" + "condensador=" + condensador + ", compresor=" + compresor + ", evaporador=" + evaporador + ", termoestato=" + termoestato + '}';
+        return super.toString()+"\n Refrigerador{" + "condensador=" + condensador + ", compresor=" + compresor + ", evaporador=" + evaporador + ", termoestato=" + termoestato + '}';
     }
+
+    @Override
+    public String instalar() {
+        return "La marca " + super.getMarca() + " debe instarlar en una zona amplia";
+    }
+
+    @Override
+    public String configurar() {
+         return "El  " + super.getNombre() + " puede configurar la temperatura usando su telefono movil.";
+    }
+    
     
 }
