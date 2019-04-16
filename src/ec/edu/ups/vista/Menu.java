@@ -28,7 +28,7 @@ public class Menu {
         int opcionMenuRefrigerador = 0;
         int opcionMenuComputador = 0;
         int opcionMenuTelevisor = 0;
-        int codigo=0;
+        
         ControladorAireAcondicionado controladorAire = new ControladorAireAcondicionado();
         ControladorComputadora controladorComputadora=new ControladorComputadora();
         ControladorRefrigerador controladorRefrigerador=new ControladorRefrigerador();
@@ -92,8 +92,8 @@ public class Menu {
                                 
                               
                                 AireAcondicionado objeto=new AireAcondicionado(condensador, compresor, evaporador, termoestato, lineaPequenia,
-                                        limpieza, clima, cosina, codigo, marca, nombre, precio);
-                                codigo++;        
+                                        limpieza, clima, cosina, 0, marca, nombre, precio);
+                                       
                                 controladorAire.create(objeto);
                                 System.out.println("\n"+objeto+"\n");
                                 break;

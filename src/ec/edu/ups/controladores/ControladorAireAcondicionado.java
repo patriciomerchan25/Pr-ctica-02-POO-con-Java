@@ -15,12 +15,16 @@ import java.util.List;
 public class ControladorAireAcondicionado {
     
      private List<AireAcondicionado> lista;
+     private int codigo;
 
     public ControladorAireAcondicionado() {
         lista = new ArrayList<>();
+        codigo=0;
     }
     
     public void create(AireAcondicionado objeto){
+        objeto.setCodigo(codigo);
+        codigo++;
         lista.add(objeto);
     }
     
