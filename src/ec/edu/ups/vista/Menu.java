@@ -28,7 +28,7 @@ public class Menu {
         int opcionMenuRefrigerador = 0;
         int opcionMenuComputador = 0;
         int opcionMenuTelevisor = 0;
-        
+        int codigo=0;
         ControladorAireAcondicionado controladorAire = new ControladorAireAcondicionado();
         ControladorComputadora controladorComputadora=new ControladorComputadora();
         ControladorRefrigerador controladorRefrigerador=new ControladorRefrigerador();
@@ -47,6 +47,7 @@ public class Menu {
             
             switch(opcionMenuPrincipal){
                 case 1: 
+                    
                     //opcion para el crud aire acondicionado
                     do{
                         System.out.println("MENU AIRE ACONDICIONADO");
@@ -80,8 +81,8 @@ public class Menu {
                                 String clima=letra.nextLine();
                                 System.out.println("ingrese cosina");
                                 String cosina=letra.nextLine();
-                                System.out.println("ingrese el codigo");
-                                int codigo=num.nextInt();
+                                
+                                
                                 System.out.println("ingrese la marca");
                                 String marca=letra.nextLine();
                                 System.out.println("ingrese el nombre");
@@ -92,7 +93,7 @@ public class Menu {
                               
                                 AireAcondicionado objeto=new AireAcondicionado(condensador, compresor, evaporador, termoestato, lineaPequenia,
                                         limpieza, clima, cosina, codigo, marca, nombre, precio);
-                                        
+                                codigo++;        
                                 controladorAire.create(objeto);
                                 System.out.println("\n"+objeto+"\n");
                                 break;
@@ -103,13 +104,17 @@ public class Menu {
                                 //visualizo los datos del objeto
                                 System.out.println("ingrese el codigo");
                                 int codigoRead=num.nextInt();
-                                controladorAire.read(codigoRead);
+                                System.out.println( controladorAire.read(codigoRead));
+                                
                                 break;
                             case 3:
                                 //update
                                 //pide todos los datos por teclado
                                 //instancia un objeto
                                 //llama al metodo update del controlador
+                                 System.out.println("ingrese el codigo");
+                                int codigoUP=num.nextInt();
+                                
                                   System.out.println("ingrese el condensador");
                                 String condensadorUP=letra.nextLine();
                                 System.out.println("ingrese el compresor");
@@ -126,9 +131,7 @@ public class Menu {
                                 String climaUP=letra.nextLine();
                                 System.out.println("ingrese cosina");
                                 String cosinaUP=letra.nextLine();
-                                
-                                System.out.println("ingrese el codigo");
-                                int codigoUP=num.nextInt();
+                               
                                 System.out.println("ingrese la marca");
                                 String marcaUP=letra.nextLine();
                                 System.out.println("ingrese el nombre");
@@ -137,9 +140,9 @@ public class Menu {
                                 double precioUP=num.nextDouble();
                                 
                               
-                                AireAcondicionado objeto1=new AireAcondicionado(condensadorUP, compresorUP, evaporadorUP, termoestatoUP, lineaPequeniaUP,
+                                objeto=new AireAcondicionado(condensadorUP, compresorUP, evaporadorUP, termoestatoUP, lineaPequeniaUP,
                                         limpiezaUP, climaUP, cosinaUP, codigoUP, marcaUP, nombreUP, precioUP);
-                                controladorAire.update(objeto1);
+                                controladorAire.update(objeto);
                                 break;
                             case 4:
                                 //delete
