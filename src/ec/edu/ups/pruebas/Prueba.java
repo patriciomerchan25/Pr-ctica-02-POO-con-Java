@@ -52,6 +52,7 @@ public class Prueba {
         System.out.println("\n");
         
         
+        
         Refrigerador sukasa=new Refrigerador("mediano", "2", "4 ", "40 ºF (4.4 ºC)", "linea 5 Style",
                 "2 veses", "no", "guardar todo tipo de comida", 661, "Indurama", "SUKASA Frost 381L", 700.65);
         System.out.println(sukasa);
